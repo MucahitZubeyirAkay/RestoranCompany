@@ -1,0 +1,35 @@
+﻿@model IEnumerable<RestoranCompany.Entity.Kategori>
+
+ 
+<div class="border p-4 bg-white">
+    <div class="row">
+        <div class="col-9">
+            <h2 class="text-danger">KATEGORİ LİSTESİ</h2>           
+        </div>
+    </div>
+</div>
+
+<br/>
+<br/>
+<table class="table table-bordered">
+    <tr>
+        <th>KATEGORİ ADI</th>
+        <th>KATEGORİ AÇIKLAMA</th>
+        <th>DETAY</th>
+    </tr>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+              <tr>
+                  <td>@item.KategoriAdi</td>
+                  <td>@item.KategoriAciklamasi </td>
+                  <td><a href="/Kategori/Urun/@item.Id" class="btn btn-warning">Ürünler</a></td>
+              </tr>                              
+        }
+    </tbody>
+
+</table>
+
+
+                

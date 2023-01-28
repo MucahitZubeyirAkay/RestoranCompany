@@ -1,0 +1,37 @@
+﻿@using ENTITIES.Entity
+@model List<Urun>
+
+
+<div class="border p-4 bg-white">
+    <div class="row">
+        <div class="col-9">
+           <h2 class="text-danger">URUN LİSTESİ</h2>                         
+        </div>
+    </div>
+</div>
+
+<br/>
+<br/>
+<table class="table table-bordered">
+    <tr>
+       @* <th>KATEGORİ ID</th>*@
+        <th>Ürün Adı</th>
+        <th>Ürün Fiyatı</th>    
+    </tr>
+    
+    <tbody>
+        @foreach (var item in Model)
+        {
+              <tr>
+                     @* <td>@item.KategoriId</td>*@
+                      <td>@item.Adi</td>
+                      <td>@item.UrunFiyat TL</td>
+                  </tr>
+
+                  
+        }
+    </tbody>
+
+</table>
+
+

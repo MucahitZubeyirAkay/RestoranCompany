@@ -1,0 +1,56 @@
+﻿@model List<UrunModel>
+@using RestoranCompany.Entity
+@{
+    ViewData["Title"] = "URUNLER";
+}
+
+<div class="row">
+    <div class="col">
+        <h1 class="display-4">@ViewData["Title"]</h1>
+        <hr />
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        <a asp-action="Create" class="btn btn-primary btn-sm"><i class="fa fa-plus me2"></i>Urun Ekle</a>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col">
+        <table class="table table-hover table-sm">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Ürun Adı</th>
+                    <th>Kategori Id</th>
+                    <th>Ürün Adet</th>
+                    <th>Ürün Fiyat</th>
+                    <th>Ürün Reçetesi</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (UrunModel urun in Model)
+                {
+                                <tr>
+                                        <td>@urun.Id</td>
+                                        <td>@urun.Adi</td>
+                                        <td>@urun.KategoriId</td>
+                                        <td>@urun.UrunAdet</td>
+                                        <td>@urun.UrunFiyat</td>
+                                        <td></td>
+                                        <td class="text-end">
+                                            <a asp-action="Edit" asp-route-id="@urun.Id" class="btn btn-info btn-sm"><i class="fa fa-edit me-2"></i>Düzenle</a>
+                                            <a asp-action="Delete" asp-route-id="@urun.Id" onclick="return confirm('@urun.Adi Bu kaydı silmek istediğinizden emin misiniz?')" class="btn btn-danger btn-sm"><i class="fa fa-trash me-2"></i>Sil</a>
+                                        </td>
+
+                                </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

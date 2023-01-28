@@ -1,0 +1,100 @@
+﻿@model CreateUserModel
+@{
+    ViewData["Title"] = "Kullanıcı Oluştur";
+}
+
+<div class=" row"> 
+    <div class="col-4 offset-4">
+        <h1 class="display-4 border-bottom text-center pb-2 "> @ViewData["Title"]</h1>
+    </div>
+        
+</div>
+
+
+<div class=" row">
+    <div class="col-4 offset-4">       
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger small"></div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Username" class="form-label">Username </label>
+                <input asp-for="Username" class="form-control" placeholder="mucahit" />
+                <span asp-validation-for="Username" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Password" class="form-label">Password </label>
+                <input asp-for="Password" type="password" class="form-control" placeholder="Ş1fr3!" />
+                <span asp-validation-for="Password" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="RePassword" class="form-label">Re-Password </label>
+                <input asp-for="RePassword" type="password" class="form-control" placeholder="Ş1fr3!" />
+                <span asp-validation-for="RePassword" class="text-danger small"></span>
+            </div>
+@*
+
+            <div class="form-group mb-3">
+                <label asp-for="Ad" class="form-label">Ad </label>
+                <input asp-for="Ad" class="form-control" placeholder="mucahit" />
+                <span asp-validation-for="Ad" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Soyad" class="form-label">Soyad </label>
+                <input asp-for="Soyad" class="form-control" placeholder="akay" />
+                <span asp-validation-for="Soyad" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="TelNo" class="form-label">TelNo </label>
+                <input asp-for="TelNo" class="form-control" placeholder="555 555 55 55" />
+                <span asp-validation-for="TelNo" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Adres" class="form-label">Adres </label>
+                <input asp-for="Adres" class="form-control" placeholder="...mah.,..sok.,no:..,daire..,Bağ/İST" />
+                <span asp-validation-for="Adres" class="text-danger small"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Eposta" class="form-label">Eposta </label>
+                <input asp-for="Eposta" class="form-control" placeholder="aaa@hotmail.com" />
+                <span asp-validation-for="Eposta" class="text-danger small"></span>
+            </div>
+*@
+
+            <div class="form-group mb-3">
+                <label asp-for="Role" class="form-label">Rol </label>              
+                <select asp-for="Role" class="form-select">
+                  <option value="">Lütfen rolü seçiniz.</option>
+                  <option value="admin">Admin</option>
+                  <option value="personel">Personel</option>
+                  <option value="mudur">Müdür</option>
+                  <option value="garson">Garson</option>
+                  <option value="user">Kullanıcı</option>
+                </select>
+                 <span asp-validation-for="Role" class="text-danger small"></span>
+            </div>
+
+
+            <div class="form-group mb-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" asp-for="Locked">
+                    <label class="form-check-label"  asp-for="Locked">
+                         KilitliAçık
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="form-group mb-3">
+                <button type ="submit" class="btn btn-primary"><i class="fa-solid fa-save me-2"></i>Kaydet</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+

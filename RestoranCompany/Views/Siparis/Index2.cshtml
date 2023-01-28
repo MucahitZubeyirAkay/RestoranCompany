@@ -1,0 +1,59 @@
+﻿@model List<SiparisModel>
+@using RestoranCompany.Entity
+@{
+    ViewData["Title"] = "SİPARİŞLER";
+}
+
+<div class="row">
+    <div class="col">
+        <h1 class="display-4">@ViewData["Title"]</h1>
+        <hr />
+    </div>
+</div>
+
+
+<div class="row mb-3">
+    <div class="col">
+        <table class="table table-hover table-sm">
+            <thead>
+                <tr>
+                    <th>SiparişId</th>
+                    <th>Masa Adı</th>
+                    <th>Ürun ID</th>
+                    <th>SiparisVerenAd</th>
+                    <th>SiparisVerenSoyad</th>
+                    <th>Toplam Fiyat</th>
+                    <th>SiparisZamani</th>
+                    <th>SiparisAdres</th>
+                    <th>SiparisAciklama</th>
+                    <th></th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (SiparisModel item in Model)
+                {
+                                        <tr>
+                                                <td>@item.Id</td>
+                                                <td>@item.Masa</td>
+                                                <td>@item.UrunId</td>  
+                                                <td>@item.SiparisVerenAd</td>
+                                                <td>@item.SiparisVerenSoyad</td>
+                                                <td>@item.ToplamTutar</td>
+                                                <td>@item.SiparisZamani</td>
+                                                <td>@item.SiparisAdres</td>
+                                                <td>@item.SiparisAciklama</td>
+                                                <td></td>
+                                                <td class="text-end">
+                                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-sm"><i class="fa fa-edit me-2"></i>Düzenle</a>
+                                                    <a asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('@item.Id Bu kaydı silmek istediğinizden emin misiniz?')" class="btn btn-danger btn-sm"><i class="fa fa-trash me-2"></i>Sil</a>
+                                                </td>
+
+                                        </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

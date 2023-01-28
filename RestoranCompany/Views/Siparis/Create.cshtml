@@ -1,0 +1,187 @@
+﻿@model SiparisModel
+@{
+    ViewData["Title"] = "Sipariş Oluştur Oluştur";
+}
+
+
+
+
+<div class=" row">
+ <div class="col-4 offset-4">       
+    <form method="post">
+    
+          <div asp-validation-summary="ModelOnly" class="text-danger small"></div>
+
+         <div class="row">
+                <div class="col-md-6">
+                    
+                       <div class="form-group mb-1" >
+
+                            <label  class="form-label">Adet</label>
+                            <input   class="form-control " placeholder="0" />
+                            <span    class="text-danger small"></span>
+
+                       </div>
+
+
+                       <div class="form-group mb-1" >
+
+                       <label asp-for="IndririmTutar"  class="form-label">İndirim Kodu</label>
+                       <input asp-for="IndririmTutar" class="form-control " placeholder="kodu" />
+                       <span   asp-validation-for="IndririmTutar" class="text-danger small"></span>
+                       </div>
+
+
+                </div>
+               
+
+@*
+                <div class="col-md-6">
+                       
+                    <div class="form-group mb-1">
+                        
+                           <label asp-for="MasaId" class="form-label">Masa Seçiniz </label>              
+                           <select asp-for="MasaId" class="form-select">
+                            @foreach (var item in Model.Masa)
+                            {  
+                                       <option value="@item.MasaAd">@item.Id</option>
+                                
+                            } 
+                           </select> 
+                       
+                           <span asp-validation-for="MasaId" class="text-danger small"></span>
+                    </div> 
+
+                       *@
+                </div>
+       
+
+         <div class="col-md-10">
+
+                <div class="form-group mb-1">
+
+                    <label asp-for="SiparisAciklama" class="form-label">ÜrünFiyatı</label>
+                    <input asp-for="SiparisAciklama" class="form-control " placeholder="0,00 TL" />
+                    <span  asp-validation-for="SiparisAciklama" class="text-danger small"></span>
+                </div>
+
+                <div class="form-group mb-1">
+
+                 <label asp-for="ToplamTutar" class="form-label">ÖdenecekToplamFiyat</label>
+                 <input asp-for="ToplamTutar" class="form-control " placeholder="0,00 TL" />
+                 <span asp-validation-for="ToplamTutar"  class="text-danger small"></span>
+                </div>
+
+         
+
+                        @*
+                <legend>Musteri Bilgileri</legend>
+                <div class="container">
+                    <div class="row">*@
+                        <div class="col-md-6">
+
+                             <div class="form-group mb-1">
+
+                                <label asp-for="SiparisVerenAd" class="form-label">Adınızı Giriniz. </label>
+                                <input asp-for="SiparisVerenAd" class="form-control " placeholder="mucahit" />
+                                <span asp-validation-for="SiparisVerenAd"  class="text-danger small"></span>
+                             </div>
+
+
+
+                            <div class="form-group mb-1">
+
+                                 <label asp-for="SiparisVerenSoyad" class="form-label">Soyadınızı Giriniz. </label>
+                                 <input asp-for="SiparisVerenSoyad" class="form-control " placeholder="akay" />
+                                 <span asp-validation-for="SiparisVerenSoyad"  class="text-danger small"></span>
+                            </div>
+
+
+
+                            <div class="form-group mb-1">
+
+                                <label asp-for="SiparisTelNo" class="form-label">Telefon giriniz. </label>
+                                <input asp-for="SiparisTelNo" class="form-control " placeholder="5468461212" />
+                                <span asp-validation-for= "SiparisTelNo" class="text-danger small"></span>
+                            </div>
+
+                        </div>
+
+
+
+
+                         <div class="col-md 6">
+                            <div class="form-group mb-4">
+
+                                 <label asp-for="Eposta" class="form-label">E-posta giriniz </label>
+                                 <input asp-for="Eposta" class="form-control " placeholder="aaa.....com" />
+                                 <span asp-validation-for="Eposta"  class="text-danger small"></span>
+                            </div>
+                         </div>
+
+
+
+                         <div class="form-group mb-6">
+
+                                <label asp-for="SiparisAdres" class="form-label">Adres giriniz </label>
+                                <input asp-for="SiparisAdres" class="form-control " placeholder=".sok, .cad, .mah, ..." />
+                                <span asp-validation-for="SiparisAdres"  class="text-danger small"></span>
+                         </div>
+
+                  @*  </div>
+
+                </div>*@
+
+
+
+                <div class="form-group mb-3">
+                    <button type ="submit" class="btn btn-primary"><i class="fa-solid fa-save me-2"></i>Kaydet</button>
+                </div>
+        
+         </div>
+
+    </form>
+  
+ </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+@* <div class="form-group mb-1">
+                <label asp-for="KategoriID" class="form-label">Kategori Seçiniz </label>              
+                <select asp-for="KategoriID" class="form-select">
+                    <option >Lütfen bir seçim yapınız! </option>
+                                    @foreach (var item in Model.Kategori)
+                                    {
+                                  <option value="@item.KategoriAdi">@item.Id</option>
+                                    } 
+
+                </select>  
+
+                 <span class="text-danger small"></span>
+            </div>*@
+
+@*<div class="form-group mb-1">
+                <label asp-for="UrunId" class="form-label">Urun Seçiniz </label>              
+
+                @foreach(var item in Model.Urun)
+                {
+                   <select asp-for="UrunId" class="form-select">
+                   <option >Lütfen bir seçim yapınız! </option>
+
+                      <option value="@item.Adi">@item.Id</option>
+
+
+                    </select>  
+                }
+
+                 <span class="text-danger small"></span>
+            </div>*@
